@@ -1,0 +1,5 @@
+// This is the new implementation
+// It will process the string differently
+String result = input.toLowerCase();
+System.out.println("Processing: " + input);
+return result + " (processed)";

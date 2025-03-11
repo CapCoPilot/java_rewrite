@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 17
+targetCompatibility = 17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JavaParser for AST manipulation that preserves comments
+    implementation 'com.github.javaparser:javaparser-core:3.25.5'
+    implementation 'com.github.javaparser:javaparser-symbol-solver-core:3.25.5'
+    
+    implementation 'info.picocli:picocli:4.7.5'
+    annotationProcessor 'info.picocli:picocli-codegen:4.7.5'
+    
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+application {
+    mainClass = 'com.example.javarewrite.JavaRewriter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Generate Picocli completion scripts
+tasks.register('generateCompletion', JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'picocli.AutoComplete'
+    args = ['--force', '--completionScript', 'java-rewriter.bash', 'com.example.javarewrite.JavaRewriter']
+    outputs.file('java-rewriter.bash')
+}
