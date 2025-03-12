@@ -11,8 +11,10 @@
  2. Ask Claude questions about your codebase.
  3. Ask Claude to implement changes to your codebase.
 
+******* Begin Prompt*******************************************************************************
 > create an app with Gradle 8+ that will allow to replace a method in a java program. Use the
   best library that can rewrite Java using an AST while preserving comments.
+******* End Prompt*******************************************************************************
 
 ⏺ I'll create a Gradle project that can rewrite Java methods while preserving comments. Let me
   start by checking if we have a directory structure to work with.
