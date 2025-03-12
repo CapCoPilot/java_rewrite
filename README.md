@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # java_rewrite
-=======
+
 # Java Method Rewriter
 
 A tool to replace method bodies in Java source files while preserving comments and formatting.
@@ -30,4 +29,3 @@ A tool to replace method bodies in Java source files while preserving comments a
 ```bash
 ./gradlew run --args="src/main/java/com/example/javarewrite/SampleClass.java -m processString -r replacement.txt -d"
 ```
->>>>>>> 679fe2b (feat: initial commit)
