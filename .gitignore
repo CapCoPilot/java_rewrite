@@ -1,1 +1,3 @@
-Experiments with re-writing java files.
+.gradle/
+build/
+.idea/
